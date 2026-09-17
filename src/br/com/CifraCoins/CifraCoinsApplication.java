@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class CifraCoinsApplication {
     public static void main(String[] args) {
+        User user = new User("joubert");
+
         Category salaryCategory = new Category("salary", CategoryType.INCOME);
         Transaction salary = new Transaction(3000,"Monthly salary",LocalDate.now(),salaryCategory);
 
@@ -16,7 +18,8 @@ public class CifraCoinsApplication {
         Category mercadoCategory = new Category("Mercado",CategoryType.EXPENSE);
         Transaction mercado = new Transaction(500,"food",LocalDate.now(),mercadoCategory);
 
-        FinancialController controller = new FinancialController();
+        FinancialController controller = new FinancialController(user);
+
         controller.addTransaction(salary);
         controller.addTransaction(rent);
         controller.addTransaction(freelancer);

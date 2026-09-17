@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FinancialController {
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
     private List<Transaction> transactions;
 
-    public FinancialController() {
+    public FinancialController(User user) {
+        this.user=user;
         transactions = new ArrayList<>();
     }
 
